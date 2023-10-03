@@ -1,5 +1,5 @@
 from torch.utils.data import Dataset
-from SeqenceLabeling._registry import register_dataset
+from TokenClassification._registry import register_dataset
 from .load_data import load_CoNLL2003
 
 

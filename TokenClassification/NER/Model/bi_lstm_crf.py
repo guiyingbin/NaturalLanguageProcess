@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-from SeqenceLabeling.NER.Utils.tools import log_sum_exp, argmax
-from SeqenceLabeling._registry import register_model
+from TokenClassification.NER.Utils.tools import log_sum_exp, argmax
+from TokenClassification._registry import register_model
 from torchcrf import CRF
 
 
