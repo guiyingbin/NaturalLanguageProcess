@@ -4,7 +4,7 @@ source:https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Text-Classification/blo
 import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, PackedSequence
-from TextClassification.Utils.Layers import WordAttention, SentenceAttention
+from TextClassification.Utils.layers import WordAttention, SentenceAttention
 
 
 class HAN(nn.Module):
