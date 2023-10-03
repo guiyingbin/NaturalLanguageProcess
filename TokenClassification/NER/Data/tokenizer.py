@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from SeqenceLabeling._registry import register_tokenzier
+from TokenClassification._registry import register_tokenzier
 from transformers import BertTokenizerFast
 @register_tokenzier
 class bertTokenizerFast(BertTokenizerFast):

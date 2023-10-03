@@ -1,5 +1,5 @@
 from transformers import Trainer, TrainingArguments, DataCollatorForTokenClassification
-from SeqenceLabeling._registry import get_model, get_tokenizer, get_dataset, get_config
+from TokenClassification._registry import get_model, get_tokenizer, get_dataset, get_config
 from Data.metrics import compute_metrics
 from Config.base_config import baseConfig
 

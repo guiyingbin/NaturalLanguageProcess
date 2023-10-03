@@ -1,5 +1,5 @@
-from SeqenceLabeling.NER.Config.base_config import baseConfig
-from SeqenceLabeling._registry import register_config
+from TokenClassification.NER.Config.base_config import baseConfig
+from TokenClassification._registry import register_config
 
 @register_config
 class bi_lstm_crf_conll2003(baseConfig):
