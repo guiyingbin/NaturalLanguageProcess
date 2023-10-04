@@ -46,4 +46,7 @@ if __name__ == "__main__":
     #                           vocab_file=r"E:\LocalRepository\NaturalLanguageProcess\TokenizerFile\BertConll2003\vocab.txt",
     #                           tokenizer_file=r"E:\LocalRepository\NaturalLanguageProcess\TokenizerFile\BertConll2003\tokenizer.json",
     #                           do_lower_case=True)
-    # print(tokenizer("MSK", add_special_tokens=False))
+    # item = tokenizer(["MSK","_","dfskd"], add_special_tokens=False)
+    # print(item["input_ids"])
+    # decode = tokenizer.decode(item["input_ids"][0][0])
+    # print(decode)
