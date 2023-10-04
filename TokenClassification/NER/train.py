@@ -37,7 +37,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config_name", type=str, default="bi_lstm_crf_conll2003",
+    parser.add_argument("--config_name", type=str, default="meta_lstm_conll2003",
                         help="config的名字，可见Config文件对应类名")
     opt = parser.parse_args()
     config = get_config(opt.config_name)

@@ -7,7 +7,7 @@ from torchcrf import CRF
 
 @register_model
 class Bi_LSTM_CRF(nn.Module):
-    def __init__(self, embedding_size=128, hidden_size=256, vocab_size=30552, target_size=9, drop_out=0.0):
+    def __init__(self, embedding_size=128, hidden_size=256, vocab_size=30552, target_size=9, drop_out=0.0, num_layers=2):
         super().__init__()
         self.hidden_size = hidden_size
         # nn.Embedding: parameter size (num_words, embedding_dim)
@@ -19,7 +19,7 @@ class Bi_LSTM_CRF(nn.Module):
             input_size=embedding_size,
             hidden_size=hidden_size,
             batch_first=True,
-            num_layers=2,
+            num_layers=num_layers,
             dropout=drop_out,
             bidirectional=True
         )
