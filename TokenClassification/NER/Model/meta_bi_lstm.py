@@ -67,10 +67,10 @@ class Meta_Bi_LSTM(nn.Module):
             n_char = char_lens[i]
 
             t_char_id = torch.cat([char_input_ids[i, :n_char],
-                                   torch.zeros(size=(difference,), requires_grad=False, dtype=torch.long)],
+                                   torch.zeros(size=(difference,), requires_grad=False, dtype=torch.long, device=char_input_ids.device)],
                                   dim=0).unsqueeze(0)
             t_char_mask = torch.cat([char_mask[i, :n_char],
-                                     torch.zeros(size=(difference,), requires_grad=False, dtype=torch.long)],
+                                     torch.zeros(size=(difference,), requires_grad=False, dtype=torch.long, device=char_input_ids.device)],
                                     dim=0).unsqueeze(0)
             char_embed = self.emb(t_char_id)
             f_b_c, _ = self.char_model_lstm(char_embed)  # [B, N, 2*h]
@@ -90,7 +90,7 @@ class Meta_Bi_LSTM(nn.Module):
     def forward_word_model(self, input_ids):
         word_embed = self.emb(input_ids)  # 这里char和word-level应该是不同embed,这里是简写
         B, N, _ = word_embed.shape
-        word_embed = word_embed + self.pre_emb
+        word_embed = word_embed + self.pre_emb.to(word_embed.device)
         f_b_w, _ = self.word_model_lstm(word_embed)
         m_word = self.word_model_mlp(f_b_w)
         word_pred_logits = self.word_model_classifier(m_word)
