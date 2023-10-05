@@ -14,3 +14,4 @@
 - NER
   - Bi_LSTM_CRF:[Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/pdf/1508.01991v1.pdf)
   - Meta_Bi_LSTM:[Morphosyntactic Tagging with a Meta-BiLSTM Model over Context Sensitive Token Encodings](https://arxiv.org/pdf/1805.08237.pdf)
+  - GRN:[GRN: Gated Relation Network to Enhance Convolutional Neural Network for Named Entity Recognition](https://arxiv.org/pdf/1907.05611v2.pdf)
